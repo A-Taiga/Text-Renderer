@@ -1,2 +1,28 @@
-add_library(Text-Renderer STATIC sprite_sheet.cpp)
-target_include_directories(Text-Renderer PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
+cmake_minimum_required(VERSION 3.10)
+
+# Set project name and language
+project(sprite_sheet_lib CXX)
+
+# Create the library
+add_library(sprite_sheet_lib
+    file_reader.cpp
+    file_reader.h
+    sprite_sheet.cpp
+    sprite_sheet.h
+)
+
+# Set C++ standard to C++11 (adjust if you need a different version)
+target_compile_features(sprite_sheet_lib PUBLIC cxx_std_11)
+
+# Make the library's header files available to other targets
+target_include_directories(sprite_sheet_lib
+    PUBLIC
+        ${CMAKE_CURRENT_SOURCE_DIR}
+)
+
+# Set output directories
+set_target_properties(sprite_sheet_lib
+    PROPERTIES
+    ARCHIVE_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/lib"
+    LIBRARY_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/lib"
+)
