@@ -39,6 +39,7 @@ GUI::Bitmap::Bitmap(const char* file_name)
     pixels = std::vector<std::uint32_t>(width*height);
     file.seekg(header.offset, std::ios::beg);
 
+    // read in bitmap backgwards because that's how the pixels are stored.
     for(auto i = height-1; i >= 0; --i)
         for(auto j = 0; j < width; ++j)
             file.read(reinterpret_cast<char*>(&pixels[i * width + j]), sizeof(std::uint32_t));

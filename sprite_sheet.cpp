@@ -20,7 +20,7 @@ GUI::Sprite_Sheet:: Sprite_Sheet(const char* file_name, std::size_t _sprite_widt
     {
         const auto row = i % sprites_per_col * _sprite_height;
         const auto column = std::floor(i / sprites_per_col) * sprite_area * sprites_per_col;
-
+        
         for(auto j = 0; j < _sprite_width; ++j)
             for(auto k = 0; k < _sprite_height; ++k)
                 sprite_vector[i][j + k * _sprite_width] = bitmap[(row+column)+j*bitmap.get_image_width()+k];

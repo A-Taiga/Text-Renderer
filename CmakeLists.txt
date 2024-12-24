@@ -1,0 +1,2 @@
+add_library(Text-Renderer STATIC sprite_sheet.cpp)
+target_include_directories(Text-Renderer PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
