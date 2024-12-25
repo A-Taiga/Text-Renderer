@@ -52,7 +52,7 @@ std::size_t GUI::Bitmap::size() const
     return pixels.size();
 }
 
-std::uint32_t GUI::Bitmap::operator[](const std::size_t index) const noexcept
+std::uint32_t GUI::Bitmap::operator[](const std::size_t index) const
 {
     try
     {
