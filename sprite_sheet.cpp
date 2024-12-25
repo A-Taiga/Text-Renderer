@@ -23,7 +23,7 @@ GUI::Sprite_Sheet:: Sprite_Sheet(const char* file_name, std::size_t _sprite_widt
         
         for(auto j = 0; j < _sprite_width; ++j)
             for(auto k = 0; k < _sprite_height; ++k)
-                sprite_vector[i][j + k * _sprite_width] = bitmap[(row+column)+j*bitmap.get_image_width()+k];
+                sprite_vector[i][j + k * _sprite_width] = bitmap[(row + column) + j * bitmap.get_image_width() + k];
     }
 }
 
