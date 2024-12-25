@@ -49,7 +49,7 @@ namespace GUI
 
         std::size_t size() const;
 
-        std::uint32_t operator[](const std::size_t index) const noexcept;
+        std::uint32_t operator[](const std::size_t index) const;
        
         std::int32_t get_image_width() const;
         std::int32_t get_image_height() const;
